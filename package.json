@@ -1,0 +1,21 @@
+{
+  "name": "ecopay-quibdo",
+  "version": "1.0.0",
+  "description": "Sistema Comunitario de Alerta Temprana ante Lluvias y Manejo de Residuos en Quibdó, Chocó",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ecopay",
+    "quibdo",
+    "pwa",
+    "alerta-temprana",
+    "choco"
+  ],
+  "author": "EcoPay Quibdó",
+  "license": "MIT"
+}

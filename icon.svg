@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07150e" />
+      <stop offset="50%" stop-color="#0c251a" />
+      <stop offset="100%" stop-color="#123a28" />
+    </linearGradient>
+    <linearGradient id="drop-grad" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="50%" stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="108" fill="url(#bg-grad)" stroke="#22c55e" stroke-width="4" stroke-opacity="0.3" />
+
+  <!-- Outer Protective Halo Ring -->
+  <circle cx="256" cy="256" r="215" fill="none" stroke="#22c55e" stroke-width="5" opacity="0.25" stroke-dasharray="14 10" />
+
+  <!-- Outer Water Droplet / Shield Silhouette -->
+  <path d="M256,64 C256,64 120,224 120,336 C120,411.1 180.9,472 256,472 C331.1,472 392,411.1 392,336 C392,224 256,64 256,64 Z" 
+        fill="url(#drop-grad)" filter="url(#glow)" opacity="0.95" />
+
+  <!-- Río Atrato Wave Currents -->
+  <path d="M165,340 C195,310 220,360 256,330 C290,300 320,350 350,330 C340,380 300,420 256,420 C210,420 175,385 165,340 Z" 
+        fill="#07150e" opacity="0.35" />
+
+  <!-- Eco Leaf / Recycling Sprout Overlay -->
+  <path d="M256,180 C315,200 345,265 330,325 C280,335 225,295 225,235 C225,205 245,188 256,180 Z" 
+        fill="#4ade80" opacity="0.9" />
+  
+  <path d="M256,180 Q270,265 330,325" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.75" />
+
+  <!-- Gold Beacon Sparkle (Oro y Sol Chocoano) -->
+  <circle cx="256" cy="115" r="14" fill="url(#gold-grad)" filter="url(#glow)" />
+  <circle cx="256" cy="115" r="7" fill="#ffffff" />
+</svg>

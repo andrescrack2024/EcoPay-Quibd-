@@ -1,0 +1,2209 @@
+/* ==========================================================================
+   EcoPay Quibdó - Hoja de Estilos Ultra-Moderna (styles.css v8.0.0)
+   Inspirado en el diseño Fintech/Mobile App de referencia del usuario:
+   - Paleta: Verde Esmeralda Profundo (#123826), Menta (#2d7a55), Canvas (#f6f8f5), Blanco (#ffffff)
+   - Tipografía: Plus Jakarta Sans (Grotesque Moderna)
+   - Componentes: Tarjeta Esmeralda Hero, 4 Quick Action Tiles, Bottom Bar con FAB elevado
+   ========================================================================== */
+
+:root {
+  /* Verde Esmeralda Principal de Referencia */
+  --app-emerald: #123826;
+  --app-emerald-dark: #0a2417;
+  --app-emerald-light: #1b4d36;
+  --app-emerald-gradient: linear-gradient(140deg, #103828 0%, #19523b 100%);
+  --app-emerald-glow: rgba(18, 56, 38, 0.28);
+
+  /* Acentos Menta y Pasteles */
+  --app-mint: #2d7a55;
+  --app-mint-soft: #eaf4ed;
+  --app-mint-border: #cde4d3;
+
+  /* Superficies y Fondos */
+  --app-bg: #f6f8f5;
+  --app-card: #ffffff;
+  --app-card-border: #e6ede8;
+  --app-border-subtle: #edf2ee;
+  
+  /* Textos */
+  --app-text-main: #132219;
+  --app-text-body: #4a5e52;
+  --app-text-muted: #7c9183;
+  --app-text-white: #ffffff;
+
+  /* Alertas */
+  --app-amber: #d97706;
+  --app-amber-soft: #fef3c7;
+  --app-amber-border: #f59e0b;
+  --app-amber-text: #92400e;
+
+  --app-red: #dc2626;
+  --app-red-soft: #fee2e2;
+  --app-red-border: #ef4444;
+  --app-red-text: #991b1b;
+  --app-red-glow: rgba(220, 38, 38, 0.3);
+
+  /* Radios Geométricos Finos */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  /* Sombras Suaves 2026 */
+  --shadow-sm: 0 2px 8px rgba(18, 56, 38, 0.04);
+  --shadow-card: 0 8px 26px rgba(18, 56, 38, 0.06);
+  --shadow-card-hover: 0 14px 34px rgba(18, 56, 38, 0.1);
+  --shadow-emerald: 0 12px 32px rgba(18, 56, 38, 0.3);
+  --shadow-fab: 0 10px 24px rgba(18, 56, 38, 0.4);
+
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text-main);
+  line-height: 1.55;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--app-text-main);
+}
+
+/* Contenedor Responsivo Centralizado */
+.app-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Clases de Utilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================================
+   1. CINTILLO INSTITUCIONAL SUPERIOR (Desktop)
+   ========================================================================== */
+.app-topbar {
+  background: var(--app-emerald-dark);
+  color: #a3c2b1;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-topbar strong {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO PRINCIPAL ESTILO APP NATIVA
+   ========================================================================== */
+.app-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--app-card-border);
+  padding: 0.85rem 0;
+}
+
+.app-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Perfil / Identidad */
+.app-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--app-emerald);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--app-emerald-glow);
+  flex-shrink: 0;
+}
+
+.app-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-greeting {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--app-mint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.app-location {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  line-height: 1.2;
+}
+
+/* Navegación Desktop */
+.app-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-nav-link {
+  text-decoration: none;
+  color: var(--app-text-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.app-nav-link:hover,
+.app-nav-link.active {
+  color: var(--app-emerald);
+  background: var(--app-mint-soft);
+}
+
+/* Acciones en Cabecera */
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.app-chip-network {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--app-mint-soft);
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.app-circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  color: var(--app-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.app-circle-btn:hover {
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  border-color: var(--app-mint-border);
+}
+
+.app-btn-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--app-emerald);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--app-emerald-glow);
+  transition: var(--transition);
+}
+
+.app-btn-install:hover {
+  background: var(--app-emerald-light);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO CON LA TARJETA VERDE ESMERALDA (Fintech Reference)
+   ========================================================================== */
+.app-hero-section {
+  padding: 1.5rem 0 1rem;
+}
+
+.app-emerald-card {
+  background: var(--app-emerald-gradient);
+  border-radius: var(--radius-lg);
+  color: #ffffff;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-emerald);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de resplandor sutil */
+.app-emerald-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(67, 160, 114, 0.28) 0%, rgba(18, 56, 38, 0) 70%);
+  pointer-events: none;
+}
+
+.emerald-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.emerald-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.emerald-satellite-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  color: #a7dbc0;
+  font-weight: 600;
+}
+
+.sat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+}
+
+.emerald-metric-group {
+  margin-bottom: 1.35rem;
+}
+
+.emerald-metric-label {
+  font-size: 0.82rem;
+  color: #b5d9c6;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.emerald-metric-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.emerald-metric-value .points-icon {
+  font-size: 2rem;
+}
+
+.emerald-badge-sub {
+  font-size: 0.76rem;
+  color: #c4e5d3;
+  margin-top: 0.35rem;
+}
+
+/* Banner de Estado Dinámico dentro de la Tarjeta */
+.emerald-status-banner {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.status-headline {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.status-banner-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  color: #d1fae5;
+}
+
+.emerald-card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: #a7dbc0;
+}
+
+/* ==========================================================================
+   4. CUATRO BOTONES DE ACCIÓN RÁPIDA (Grid Horizontal Redondeado)
+   ========================================================================== */
+.app-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.quick-action-tile {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--app-text-main);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quick-action-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.quick-action-tile:active {
+  transform: scale(0.96);
+}
+
+.action-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.55rem;
+  transition: var(--transition);
+}
+
+.quick-action-tile:hover .action-icon-circle {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.action-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.action-sub {
+  font-size: 0.68rem;
+  color: var(--app-text-muted);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   5. SECCIONES Y TARJETAS GENERALES
+   ========================================================================== */
+.app-section {
+  padding: 1.75rem 0;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.app-tag-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--app-mint);
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 0.86rem;
+  color: var(--app-text-body);
+  margin-top: 0.2rem;
+}
+
+.app-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.app-badge-outline {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+  background: var(--app-mint-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.app-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  color: var(--app-text-main);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.app-btn-outline:hover {
+  background: var(--app-mint-soft);
+  border-color: var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   6. CONSOLA DE SIMULACIÓN DOCENTE
+   ========================================================================== */
+.app-simulation-card {
+  background: #ffffff;
+  border-left: 5px solid var(--app-emerald);
+}
+
+.simulation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.simulation-title-wrap h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.simulation-title-wrap p {
+  font-size: 0.85rem;
+  color: var(--app-text-body);
+  max-width: 680px;
+}
+
+.mode-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* Segmented Buttons */
+.simulation-controls-dock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sim-btn {
+  background: #f8faf8;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  text-align: center;
+}
+
+.sim-btn .sim-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-bottom: 0.3rem;
+}
+
+.sim-btn .sim-name {
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sim-btn small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--app-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Variantes */
+.sim-btn-amber .sim-dot { background: var(--app-amber); }
+.sim-btn-amber:hover, .sim-btn-amber.active {
+  background: var(--app-amber-soft);
+  border-color: var(--app-amber-border);
+  color: var(--app-amber-text);
+}
+
+.sim-btn-red .sim-dot { background: var(--app-red); }
+.sim-btn-red:hover, .sim-btn-red.active {
+  background: var(--app-red-soft);
+  border-color: var(--app-red-border);
+  color: var(--app-red-text);
+  box-shadow: 0 4px 14px var(--app-red-glow);
+}
+
+.sim-btn-reset .sim-dot { background: #10b981; }
+.sim-btn-reset:hover, .sim-btn-reset.active {
+  background: var(--app-mint-soft);
+  border-color: var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   7. BOLETÍN DINÁMICO HUD (Alert Banner)
+   ========================================================================== */
+.app-hud-banner {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition);
+}
+
+.hud-inner {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+
+.hud-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hud-text-wrap {
+  flex: 1;
+}
+
+.hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.hud-status-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.hud-time {
+  font-size: 0.72rem;
+  color: var(--app-text-muted);
+}
+
+.hud-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.hud-desc {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Estados del HUD */
+.hud-normal {
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+.hud-normal .hud-icon-wrap {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.hud-normal .hud-status-badge {
+  background: #ffffff;
+  color: var(--app-emerald);
+  border: 1px solid var(--app-mint-border);
+}
+
+.hud-soft {
+  background: var(--app-amber-soft);
+  border: 2px solid var(--app-amber-border);
+  color: var(--app-amber-text);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+
+.hud-soft .hud-icon-wrap {
+  background: var(--app-amber);
+  color: #ffffff;
+}
+
+.hud-soft .hud-status-badge {
+  background: var(--app-amber);
+  color: #ffffff;
+}
+
+.hud-aggressive {
+  background: var(--app-red-soft);
+  border: 2px solid var(--app-red-border);
+  color: var(--app-red-text);
+  box-shadow: 0 8px 30px var(--app-red-glow);
+  animation: pulse-red-border 1.5s infinite;
+}
+
+@keyframes pulse-red-border {
+  0%, 100% { border-color: #ef4444; }
+  50% { border-color: #991b1b; }
+}
+
+.hud-aggressive .hud-icon-wrap {
+  background: var(--app-red);
+  color: #ffffff;
+}
+
+.hud-aggressive .hud-status-badge {
+  background: var(--app-red);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   8. TELEMETRÍA Y ANALÍTICA (Leaf Insight + Grid Clima)
+   ========================================================================== */
+.app-leaf-insight-card {
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.insight-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.insight-text {
+  font-size: 0.86rem;
+  color: var(--app-emerald);
+  line-height: 1.45;
+}
+
+.insight-text strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 0.1rem;
+}
+
+.app-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.weather-metric-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.weather-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card);
+}
+
+.metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metric-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--app-text-muted);
+}
+
+.metric-icon {
+  font-size: 1.2rem;
+}
+
+.metric-main-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.metric-footer-note {
+  font-size: 0.72rem;
+  color: var(--app-text-muted);
+  font-weight: 600;
+}
+
+.weather-sync-status {
+  text-align: right;
+  margin-top: 0.85rem;
+  font-size: 0.74rem;
+  color: var(--app-text-muted);
+}
+
+/* ==========================================================================
+   9. PUNTOS CRÍTICOS VIGILADOS (Estilo Lista de Transacciones)
+   ========================================================================== */
+.app-activity-card {
+  padding: 0.75rem 1.25rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--app-border-subtle);
+}
+
+.activity-row:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.activity-icon.bg-green {
+  background: var(--app-mint-soft);
+}
+
+.activity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-info h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.15rem;
+}
+
+.activity-info p {
+  font-size: 0.75rem;
+  color: var(--app-text-muted);
+}
+
+.activity-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-normal {
+  background: var(--app-mint-soft);
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+}
+
+/* ==========================================================================
+   10. FORMULARIO DE REPORTES Y RANKING VECINAL
+   ========================================================================== */
+.app-grid-two-cols {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.5rem;
+}
+
+.card-inner-header {
+  margin-bottom: 1.25rem;
+}
+
+.card-inner-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.card-inner-header p {
+  font-size: 0.82rem;
+  color: var(--app-text-body);
+}
+
+.app-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--app-text-main);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--app-card-border);
+  font-size: 0.86rem;
+  font-family: inherit;
+  color: var(--app-text-main);
+  background: #fbfdfb;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--app-emerald);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px var(--app-emerald-glow);
+}
+
+.form-control-file {
+  font-size: 0.8rem;
+  color: var(--app-text-body);
+}
+
+.photo-preview-wrap {
+  margin-top: 0.5rem;
+  max-width: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--app-card-border);
+}
+
+.photo-preview-wrap img {
+  width: 100%;
+  display: block;
+}
+
+.app-reward-pill {
+  background: #fbf7ee;
+  border: 1px solid #f1e4c7;
+  color: #855b14;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.app-btn-emerald {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: var(--app-emerald);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-emerald);
+  transition: var(--transition);
+}
+
+.app-btn-emerald:hover {
+  background: var(--app-emerald-light);
+  transform: translateY(-2px);
+}
+
+/* Columna Ranking */
+.app-vulnerability-banner {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.vuln-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.vuln-text h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 0.15rem;
+}
+
+.vuln-text p {
+  font-size: 0.74rem;
+  color: #b45309;
+}
+
+.sub-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--app-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.65rem;
+}
+
+.ranking-block, .feed-block {
+  margin-bottom: 1.25rem;
+}
+
+.ranking-items-list, .reports-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: #f8faf8;
+  border: 1px solid var(--app-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+}
+
+.ranking-badge {
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.feed-item {
+  padding: 0.65rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid var(--app-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+}
+
+.feed-item-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--app-text-muted);
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   11. PIE DE PÁGINA
+   ========================================================================== */
+.app-footer {
+  border-top: 1px solid var(--app-card-border);
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 2rem;
+  color: var(--app-text-muted);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icon { font-size: 1.3rem; }
+.footer-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.footer-brand p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-contact h5 {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact ul {
+  list-style: none;
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--app-border-subtle);
+  padding-top: 1.25rem;
+  text-align: center;
+  font-size: 0.74rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* ==========================================================================
+   12. BARRA DE NAVEGACIÓN INFERIOR CON FAB ELEVADO (Fintech Bottom Bar)
+   ========================================================================== */
+.app-bottom-nav {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 500px;
+  height: 66px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-full);
+  z-index: 999;
+  box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.app-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.2rem;
+  flex: 1;
+  height: 100%;
+  transition: var(--transition);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.app-tab-item .tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.app-tab-item .tab-icon svg {
+  display: block;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.app-tab-item:hover,
+.app-tab-item.active {
+  color: var(--app-emerald);
+}
+
+.app-tab-item.active .tab-icon svg {
+  transform: translateY(-2px);
+  stroke: var(--app-emerald);
+}
+
+.app-tab-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  width: 16px;
+  height: 3px;
+  background: var(--app-emerald);
+  border-radius: var(--radius-full);
+}
+
+/* Floating Action Button (FAB) en el Centro */
+.app-tab-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fab-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--app-emerald);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-fab);
+  transform: translateY(-16px);
+  transition: var(--transition);
+  border: 4px solid #ffffff;
+}
+
+.app-tab-fab:hover .fab-circle {
+  background: var(--app-emerald-light);
+  transform: translateY(-18px) scale(1.05);
+}
+
+.app-tab-fab:active .fab-circle {
+  transform: translateY(-14px) scale(0.95);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--app-emerald-dark);
+  color: #ffffff;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   13. ADAPTACIÓN MÓVIL (PWA Mobile Experience <= 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .app-container {
+    padding: 0 1rem;
+  }
+
+  /* Tarjeta Esmeralda */
+  .app-emerald-card {
+    padding: 1.4rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .emerald-metric-value {
+    font-size: 1.95rem;
+  }
+
+  /* Quick Actions 4 en fila táctil */
+  .app-quick-actions-grid {
+    gap: 0.5rem;
+  }
+
+  .quick-action-tile {
+    padding: 0.95rem 0.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .action-icon-circle {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.4rem;
+  }
+
+  .action-title {
+    font-size: 0.74rem;
+  }
+
+  .action-sub {
+    font-size: 0.62rem;
+  }
+
+  /* Simulación Dock */
+  .simulation-controls-dock {
+    grid-template-columns: 1fr;
+  }
+
+  .hud-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Weather Grid 2 Columnas */
+  .app-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .weather-metric-card {
+    padding: 1rem;
+  }
+
+  .metric-main-value {
+    font-size: 1.45rem;
+  }
+
+  /* Dos Columnas a Una */
+  .app-grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bottom Nav anclada abajo */
+  .app-bottom-nav {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -8px 24px rgba(18, 56, 38, 0.08);
+  }
+}
+
+/* Compatibilidad para elementos generados dinámicamente por app.js */
+.wx-alert-hud {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.wx-hud-header {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+
+.wx-hud-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wx-hud-content {
+  flex: 1;
+}
+
+.wx-hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.wx-hud-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-hud-subtag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.wx-hud-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.wx-hud-description {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.wx-alert-instructions {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.wx-alert-instructions h4 {
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.wx-alert-instructions ul {
+  padding-left: 1.1rem;
+}
+
+.wx-alert-instructions li {
+  margin-bottom: 0.25rem;
+}
+
+.wx-audio-box {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wx-btn-audio {
+  background: var(--app-red);
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Ranking dinámico */
+.wx-ranking-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.95rem;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+}
+
+.wx-ranking-item.is-top-danger {
+  border-left: 4px solid var(--app-amber);
+  background: #fdfcf9;
+}
+
+.wx-ranking-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.wx-ranking-item-name {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.wx-ranking-item-count {
+  font-size: 0.74rem;
+  font-weight: 800;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-ranking-item-count.danger {
+  background: var(--app-amber-soft);
+  color: var(--app-amber-text);
+}
+
+.wx-prog-bar {
+  width: 100%;
+  height: 6px;
+  background: #eef2ef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.wx-prog-bar-fill {
+  height: 100%;
+  background: var(--app-emerald);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.is-top-danger .wx-prog-bar-fill {
+  background: var(--app-amber);
+}
+
+/* Feed dinámico */
+.wx-feed-item {
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.wx-feed-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.wx-feed-item-point {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--app-emerald);
+}
+
+.wx-feed-item-time {
+  font-size: 0.7rem;
+  color: var(--app-text-muted);
+}
+
+.wx-feed-item-waste {
+  font-size: 0.78rem;
+  color: var(--app-text-body);
+  margin-bottom: 0.2rem;
+}
+
+.wx-feed-item-meta {
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wx-badge-points {
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: #fbf7ee;
+  color: #855b14;
+  border: 1px solid #f1e4c7;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-demo-tag.simulated {
+  background: var(--app-amber-soft) !important;
+  color: var(--app-amber-text) !important;
+  border-color: var(--app-amber-border) !important;
+}
+
+.wx-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.2rem;
+  flex: 1;
+  height: 100%;
+  transition: var(--transition);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.wx-tab-item.active {
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   Iconografía Vectorial Limpia (100% Vector SVG, Cero Emojis)
+   ========================================================================== */
+.topbar-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  stroke: #a3c2b1;
+}
+
+.points-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.35rem;
+}
+
+.points-icon-svg svg {
+  stroke: #ffffff;
+}
+
+.footer-coord {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metric-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-icon-wrap svg {
+  stroke: var(--app-emerald);
+}
+
+.activity-icon-clean {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.activity-row:hover .activity-icon-clean {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.activity-row:hover .activity-icon-clean svg {
+  stroke: #ffffff;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.dot-green {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.dot-amber {
+  background: #f59e0b;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+.dot-red {
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+.app-reward-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #fbf7ee;
+  border: 1px solid #f1e4c7;
+  color: #855b14;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.reward-icon-svg {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f5eedc;
+  color: #855b14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reward-icon-svg svg {
+  stroke: #855b14;
+}
+
+.vuln-icon-svg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vuln-icon-svg svg {
+  stroke: #b45309;
+}
+
+.insight-icon-svg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(45, 122, 85, 0.15);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-icon-svg svg {
+  stroke: var(--app-emerald);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--app-emerald);
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo svg {
+  stroke: var(--app-emerald);
+}
+
+.footer-contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact ul li svg {
+  stroke: var(--app-emerald);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Tarjetas Visuales de Características con Fotografía Real (Estilo Mobile Cards)
+   ========================================================================== */
+.app-feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.feature-card-img {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  background: var(--app-emerald-dark);
+}
+
+.feature-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-card-img img {
+  transform: scale(1.08);
+}
+
+.card-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(18, 56, 38, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.feature-card-body h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.feature-card-body p {
+  font-size: 0.76rem;
+  color: var(--app-text-body);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Gráfico de Barras de Tendencia de Lluvia (Estilo Spending Trend Fintech)
+   ========================================================================== */
+.app-trend-card {
+  margin-bottom: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chart-header h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.chart-sub {
+  font-size: 0.8rem;
+  color: var(--app-text-muted);
+}
+
+.legend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--app-emerald);
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.trend-bars-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.85rem;
+  align-items: flex-end;
+  height: 190px;
+  padding: 0.75rem 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--app-border-subtle);
+}
+
+.trend-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.bar-visual-wrap {
+  width: 100%;
+  max-width: 44px;
+  height: 120px;
+  background: #eef3ef;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--app-mint);
+  border-radius: var(--radius-sm);
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trend-bar-item.active-rain .bar-fill {
+  background: var(--app-emerald);
+  box-shadow: 0 0 12px var(--app-emerald-glow);
+}
+
+.trend-bar-item:hover .bar-fill {
+  filter: brightness(1.15);
+}
+
+.bar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--app-text-muted);
+}
+
+.bar-val {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.trend-bar-item.active-rain .bar-val {
+  color: var(--app-emerald);
+}
+
+/* Responsividad para móviles (<= 640px) */
+@media (max-width: 640px) {
+  .app-feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .feature-card-img {
+    height: 110px;
+  }
+
+  .feature-card-body {
+    padding: 0.75rem;
+  }
+
+  .feature-card-body h4 {
+    font-size: 0.82rem;
+  }
+
+  .feature-card-body p {
+    font-size: 0.7rem;
+  }
+
+  .trend-bars-container {
+    gap: 0.35rem;
+    height: 160px;
+  }
+
+  .bar-visual-wrap {
+    max-width: 32px;
+    height: 95px;
+  }
+
+  .bar-label {
+    font-size: 0.62rem;
+  }
+
+  .bar-val {
+    font-size: 0.64rem;
+  }
+}
+
+/* ==========================================================================
+   14. ADAPTACIÓN PARA TABLETS Y PANTALLAS MEDIANAS (<= 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .app-feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .app-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .app-grid-two-cols {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   15. ADAPTACIÓN ULTRA-COMPACTA PARA CELULARES PEQUEÑOS (<= 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .app-quick-actions-grid {
+    gap: 0.35rem;
+  }
+
+  .quick-action-tile {
+    padding: 0.75rem 0.15rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .action-icon-circle {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.25rem;
+  }
+
+  .action-title {
+    font-size: 0.68rem;
+  }
+
+  .action-sub {
+    display: none;
+  }
+
+  .app-feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-weather-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-bars-container {
+    gap: 0.2rem;
+  }
+
+  .bar-visual-wrap {
+    max-width: 26px;
+  }
+
+  .emerald-metric-value {
+    font-size: 1.65rem;
+  }
+}

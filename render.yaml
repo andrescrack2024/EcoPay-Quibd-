@@ -1,0 +1,12 @@
+services:
+  # Opción 1: Servicio Node.js (Servidor con cabeceras de no-caché y soporte PWA)
+  - type: web
+    name: ecopay-quibdo
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: ""
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production

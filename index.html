@@ -1,0 +1,3124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="theme-color" content="#123826">
+  <meta name="description" content="EcoPay Quibdó - Alerta temprana ante lluvias y cuidado de caños y rejillas en el sector La Margarita, Quibdó.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EcoPay Quibdó">
+  
+  <title>EcoPay Quibdó | Prevención de Inundaciones y Cuidado Comunitario</title>
+
+  <!-- Tipografía Moderna Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- PWA Manifest & Favicon -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <!-- Estilos CSS Modernos Dual (PC Web + Mobile App Native) -->
+    <!-- Estilos Embebidos Inmediatos (Garantiza 100% Renderizado Visual sin Fallos de Red) -->
+  <style id="app-styles">
+/* ==========================================================================
+   EcoPay Quibdó - Hoja de Estilos Ultra-Moderna (styles.css v8.0.0)
+   Inspirado en el diseño Fintech/Mobile App de referencia del usuario:
+   - Paleta: Verde Esmeralda Profundo (#123826), Menta (#2d7a55), Canvas (#f6f8f5), Blanco (#ffffff)
+   - Tipografía: Plus Jakarta Sans (Grotesque Moderna)
+   - Componentes: Tarjeta Esmeralda Hero, 4 Quick Action Tiles, Bottom Bar con FAB elevado
+   ========================================================================== */
+
+:root {
+  /* Verde Esmeralda Principal de Referencia */
+  --app-emerald: #123826;
+  --app-emerald-dark: #0a2417;
+  --app-emerald-light: #1b4d36;
+  --app-emerald-gradient: linear-gradient(140deg, #103828 0%, #19523b 100%);
+  --app-emerald-glow: rgba(18, 56, 38, 0.28);
+
+  /* Acentos Menta y Pasteles */
+  --app-mint: #2d7a55;
+  --app-mint-soft: #eaf4ed;
+  --app-mint-border: #cde4d3;
+
+  /* Superficies y Fondos */
+  --app-bg: #f6f8f5;
+  --app-card: #ffffff;
+  --app-card-border: #e6ede8;
+  --app-border-subtle: #edf2ee;
+  
+  /* Textos */
+  --app-text-main: #132219;
+  --app-text-body: #4a5e52;
+  --app-text-muted: #7c9183;
+  --app-text-white: #ffffff;
+
+  /* Alertas */
+  --app-amber: #d97706;
+  --app-amber-soft: #fef3c7;
+  --app-amber-border: #f59e0b;
+  --app-amber-text: #92400e;
+
+  --app-red: #dc2626;
+  --app-red-soft: #fee2e2;
+  --app-red-border: #ef4444;
+  --app-red-text: #991b1b;
+  --app-red-glow: rgba(220, 38, 38, 0.3);
+
+  /* Radios Geométricos Finos */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  /* Sombras Suaves 2026 */
+  --shadow-sm: 0 2px 8px rgba(18, 56, 38, 0.04);
+  --shadow-card: 0 8px 26px rgba(18, 56, 38, 0.06);
+  --shadow-card-hover: 0 14px 34px rgba(18, 56, 38, 0.1);
+  --shadow-emerald: 0 12px 32px rgba(18, 56, 38, 0.3);
+  --shadow-fab: 0 10px 24px rgba(18, 56, 38, 0.4);
+
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text-main);
+  line-height: 1.55;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--app-text-main);
+}
+
+/* Contenedor Responsivo Centralizado */
+.app-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Clases de Utilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================================
+   1. CINTILLO INSTITUCIONAL SUPERIOR (Desktop)
+   ========================================================================== */
+.app-topbar {
+  background: var(--app-emerald-dark);
+  color: #a3c2b1;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-topbar strong {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO PRINCIPAL ESTILO APP NATIVA
+   ========================================================================== */
+.app-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--app-card-border);
+  padding: 0.85rem 0;
+}
+
+.app-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Perfil / Identidad */
+.app-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--app-emerald);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--app-emerald-glow);
+  flex-shrink: 0;
+}
+
+.app-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-greeting {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--app-mint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.app-location {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  line-height: 1.2;
+}
+
+/* Navegación Desktop */
+.app-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-nav-link {
+  text-decoration: none;
+  color: var(--app-text-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.app-nav-link:hover,
+.app-nav-link.active {
+  color: var(--app-emerald);
+  background: var(--app-mint-soft);
+}
+
+/* Acciones en Cabecera */
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.app-chip-network {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--app-mint-soft);
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.app-circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  color: var(--app-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.app-circle-btn:hover {
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  border-color: var(--app-mint-border);
+}
+
+.app-btn-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--app-emerald);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--app-emerald-glow);
+  transition: var(--transition);
+}
+
+.app-btn-install:hover {
+  background: var(--app-emerald-light);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO CON LA TARJETA VERDE ESMERALDA (Fintech Reference)
+   ========================================================================== */
+.app-hero-section {
+  padding: 1.5rem 0 1rem;
+}
+
+.app-emerald-card {
+  background: var(--app-emerald-gradient);
+  border-radius: var(--radius-lg);
+  color: #ffffff;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-emerald);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de resplandor sutil */
+.app-emerald-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(67, 160, 114, 0.28) 0%, rgba(18, 56, 38, 0) 70%);
+  pointer-events: none;
+}
+
+.emerald-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.emerald-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.emerald-satellite-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  color: #a7dbc0;
+  font-weight: 600;
+}
+
+.sat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+}
+
+.emerald-metric-group {
+  margin-bottom: 1.35rem;
+}
+
+.emerald-metric-label {
+  font-size: 0.82rem;
+  color: #b5d9c6;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.emerald-metric-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.emerald-metric-value .points-icon {
+  font-size: 2rem;
+}
+
+.emerald-badge-sub {
+  font-size: 0.76rem;
+  color: #c4e5d3;
+  margin-top: 0.35rem;
+}
+
+/* Banner de Estado Dinámico dentro de la Tarjeta */
+.emerald-status-banner {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.status-headline {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.status-banner-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  color: #d1fae5;
+}
+
+.emerald-card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: #a7dbc0;
+}
+
+/* ==========================================================================
+   4. CUATRO BOTONES DE ACCIÓN RÁPIDA (Grid Horizontal Redondeado)
+   ========================================================================== */
+.app-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.quick-action-tile {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--app-text-main);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quick-action-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.quick-action-tile:active {
+  transform: scale(0.96);
+}
+
+.action-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.55rem;
+  transition: var(--transition);
+}
+
+.quick-action-tile:hover .action-icon-circle {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.action-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.action-sub {
+  font-size: 0.68rem;
+  color: var(--app-text-muted);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   5. SECCIONES Y TARJETAS GENERALES
+   ========================================================================== */
+.app-section {
+  padding: 1.75rem 0;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.app-tag-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--app-mint);
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 0.86rem;
+  color: var(--app-text-body);
+  margin-top: 0.2rem;
+}
+
+.app-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.app-badge-outline {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+  background: var(--app-mint-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.app-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  color: var(--app-text-main);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.app-btn-outline:hover {
+  background: var(--app-mint-soft);
+  border-color: var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   6. CONSOLA DE SIMULACIÓN DOCENTE
+   ========================================================================== */
+.app-simulation-card {
+  background: #ffffff;
+  border-left: 5px solid var(--app-emerald);
+}
+
+.simulation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.simulation-title-wrap h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.simulation-title-wrap p {
+  font-size: 0.85rem;
+  color: var(--app-text-body);
+  max-width: 680px;
+}
+
+.mode-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* Segmented Buttons */
+.simulation-controls-dock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sim-btn {
+  background: #f8faf8;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  text-align: center;
+}
+
+.sim-btn .sim-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-bottom: 0.3rem;
+}
+
+.sim-btn .sim-name {
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sim-btn small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--app-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Variantes */
+.sim-btn-amber .sim-dot { background: var(--app-amber); }
+.sim-btn-amber:hover, .sim-btn-amber.active {
+  background: var(--app-amber-soft);
+  border-color: var(--app-amber-border);
+  color: var(--app-amber-text);
+}
+
+.sim-btn-red .sim-dot { background: var(--app-red); }
+.sim-btn-red:hover, .sim-btn-red.active {
+  background: var(--app-red-soft);
+  border-color: var(--app-red-border);
+  color: var(--app-red-text);
+  box-shadow: 0 4px 14px var(--app-red-glow);
+}
+
+.sim-btn-reset .sim-dot { background: #10b981; }
+.sim-btn-reset:hover, .sim-btn-reset.active {
+  background: var(--app-mint-soft);
+  border-color: var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   7. BOLETÍN DINÁMICO HUD (Alert Banner)
+   ========================================================================== */
+.app-hud-banner {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition);
+}
+
+.hud-inner {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+
+.hud-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hud-text-wrap {
+  flex: 1;
+}
+
+.hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.hud-status-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.hud-time {
+  font-size: 0.72rem;
+  color: var(--app-text-muted);
+}
+
+.hud-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.hud-desc {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Estados del HUD */
+.hud-normal {
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  color: var(--app-emerald);
+}
+
+.hud-normal .hud-icon-wrap {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.hud-normal .hud-status-badge {
+  background: #ffffff;
+  color: var(--app-emerald);
+  border: 1px solid var(--app-mint-border);
+}
+
+.hud-soft {
+  background: var(--app-amber-soft);
+  border: 2px solid var(--app-amber-border);
+  color: var(--app-amber-text);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+
+.hud-soft .hud-icon-wrap {
+  background: var(--app-amber);
+  color: #ffffff;
+}
+
+.hud-soft .hud-status-badge {
+  background: var(--app-amber);
+  color: #ffffff;
+}
+
+.hud-aggressive {
+  background: var(--app-red-soft);
+  border: 2px solid var(--app-red-border);
+  color: var(--app-red-text);
+  box-shadow: 0 8px 30px var(--app-red-glow);
+  animation: pulse-red-border 1.5s infinite;
+}
+
+@keyframes pulse-red-border {
+  0%, 100% { border-color: #ef4444; }
+  50% { border-color: #991b1b; }
+}
+
+.hud-aggressive .hud-icon-wrap {
+  background: var(--app-red);
+  color: #ffffff;
+}
+
+.hud-aggressive .hud-status-badge {
+  background: var(--app-red);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   8. TELEMETRÍA Y ANALÍTICA (Leaf Insight + Grid Clima)
+   ========================================================================== */
+.app-leaf-insight-card {
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.insight-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.insight-text {
+  font-size: 0.86rem;
+  color: var(--app-emerald);
+  line-height: 1.45;
+}
+
+.insight-text strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 0.1rem;
+}
+
+.app-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.weather-metric-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.weather-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card);
+}
+
+.metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metric-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--app-text-muted);
+}
+
+.metric-icon {
+  font-size: 1.2rem;
+}
+
+.metric-main-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.metric-footer-note {
+  font-size: 0.72rem;
+  color: var(--app-text-muted);
+  font-weight: 600;
+}
+
+.weather-sync-status {
+  text-align: right;
+  margin-top: 0.85rem;
+  font-size: 0.74rem;
+  color: var(--app-text-muted);
+}
+
+/* ==========================================================================
+   9. PUNTOS CRÍTICOS VIGILADOS (Estilo Lista de Transacciones)
+   ========================================================================== */
+.app-activity-card {
+  padding: 0.75rem 1.25rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--app-border-subtle);
+}
+
+.activity-row:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.activity-icon.bg-green {
+  background: var(--app-mint-soft);
+}
+
+.activity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-info h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.15rem;
+}
+
+.activity-info p {
+  font-size: 0.75rem;
+  color: var(--app-text-muted);
+}
+
+.activity-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-normal {
+  background: var(--app-mint-soft);
+  color: var(--app-mint);
+  border: 1px solid var(--app-mint-border);
+}
+
+/* ==========================================================================
+   10. FORMULARIO DE REPORTES Y RANKING VECINAL
+   ========================================================================== */
+.app-grid-two-cols {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.5rem;
+}
+
+.card-inner-header {
+  margin-bottom: 1.25rem;
+}
+
+.card-inner-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.card-inner-header p {
+  font-size: 0.82rem;
+  color: var(--app-text-body);
+}
+
+.app-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--app-text-main);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--app-card-border);
+  font-size: 0.86rem;
+  font-family: inherit;
+  color: var(--app-text-main);
+  background: #fbfdfb;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--app-emerald);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px var(--app-emerald-glow);
+}
+
+.form-control-file {
+  font-size: 0.8rem;
+  color: var(--app-text-body);
+}
+
+.photo-preview-wrap {
+  margin-top: 0.5rem;
+  max-width: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--app-card-border);
+}
+
+.photo-preview-wrap img {
+  width: 100%;
+  display: block;
+}
+
+.app-reward-pill {
+  background: #fbf7ee;
+  border: 1px solid #f1e4c7;
+  color: #855b14;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.app-btn-emerald {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: var(--app-emerald);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-emerald);
+  transition: var(--transition);
+}
+
+.app-btn-emerald:hover {
+  background: var(--app-emerald-light);
+  transform: translateY(-2px);
+}
+
+/* Columna Ranking */
+.app-vulnerability-banner {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.vuln-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.vuln-text h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 0.15rem;
+}
+
+.vuln-text p {
+  font-size: 0.74rem;
+  color: #b45309;
+}
+
+.sub-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--app-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.65rem;
+}
+
+.ranking-block, .feed-block {
+  margin-bottom: 1.25rem;
+}
+
+.ranking-items-list, .reports-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: #f8faf8;
+  border: 1px solid var(--app-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+}
+
+.ranking-badge {
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.feed-item {
+  padding: 0.65rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid var(--app-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+}
+
+.feed-item-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--app-text-muted);
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   11. PIE DE PÁGINA
+   ========================================================================== */
+.app-footer {
+  border-top: 1px solid var(--app-card-border);
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 2rem;
+  color: var(--app-text-muted);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icon { font-size: 1.3rem; }
+.footer-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.footer-brand p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-contact h5 {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact ul {
+  list-style: none;
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--app-border-subtle);
+  padding-top: 1.25rem;
+  text-align: center;
+  font-size: 0.74rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* ==========================================================================
+   12. BARRA DE NAVEGACIÓN INFERIOR CON FAB ELEVADO (Fintech Bottom Bar)
+   ========================================================================== */
+.app-bottom-nav {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 500px;
+  height: 66px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-full);
+  z-index: 999;
+  box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.app-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.2rem;
+  flex: 1;
+  height: 100%;
+  transition: var(--transition);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.app-tab-item .tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.app-tab-item .tab-icon svg {
+  display: block;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.app-tab-item:hover,
+.app-tab-item.active {
+  color: var(--app-emerald);
+}
+
+.app-tab-item.active .tab-icon svg {
+  transform: translateY(-2px);
+  stroke: var(--app-emerald);
+}
+
+.app-tab-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  width: 16px;
+  height: 3px;
+  background: var(--app-emerald);
+  border-radius: var(--radius-full);
+}
+
+/* Floating Action Button (FAB) en el Centro */
+.app-tab-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fab-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--app-emerald);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-fab);
+  transform: translateY(-16px);
+  transition: var(--transition);
+  border: 4px solid #ffffff;
+}
+
+.app-tab-fab:hover .fab-circle {
+  background: var(--app-emerald-light);
+  transform: translateY(-18px) scale(1.05);
+}
+
+.app-tab-fab:active .fab-circle {
+  transform: translateY(-14px) scale(0.95);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--app-emerald-dark);
+  color: #ffffff;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   13. ADAPTACIÓN MÓVIL (PWA Mobile Experience <= 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .app-container {
+    padding: 0 1rem;
+  }
+
+  /* Tarjeta Esmeralda */
+  .app-emerald-card {
+    padding: 1.4rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .emerald-metric-value {
+    font-size: 1.95rem;
+  }
+
+  /* Quick Actions 4 en fila táctil */
+  .app-quick-actions-grid {
+    gap: 0.5rem;
+  }
+
+  .quick-action-tile {
+    padding: 0.95rem 0.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .action-icon-circle {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.4rem;
+  }
+
+  .action-title {
+    font-size: 0.74rem;
+  }
+
+  .action-sub {
+    font-size: 0.62rem;
+  }
+
+  /* Simulación Dock */
+  .simulation-controls-dock {
+    grid-template-columns: 1fr;
+  }
+
+  .hud-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Weather Grid 2 Columnas */
+  .app-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .weather-metric-card {
+    padding: 1rem;
+  }
+
+  .metric-main-value {
+    font-size: 1.45rem;
+  }
+
+  /* Dos Columnas a Una */
+  .app-grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bottom Nav anclada abajo */
+  .app-bottom-nav {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -8px 24px rgba(18, 56, 38, 0.08);
+  }
+}
+
+/* Compatibilidad para elementos generados dinámicamente por app.js */
+.wx-alert-hud {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.wx-hud-header {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+
+.wx-hud-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wx-hud-content {
+  flex: 1;
+}
+
+.wx-hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.wx-hud-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-hud-subtag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.wx-hud-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.wx-hud-description {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.wx-alert-instructions {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.wx-alert-instructions h4 {
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.wx-alert-instructions ul {
+  padding-left: 1.1rem;
+}
+
+.wx-alert-instructions li {
+  margin-bottom: 0.25rem;
+}
+
+.wx-audio-box {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wx-btn-audio {
+  background: var(--app-red);
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Ranking dinámico */
+.wx-ranking-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.95rem;
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+}
+
+.wx-ranking-item.is-top-danger {
+  border-left: 4px solid var(--app-amber);
+  background: #fdfcf9;
+}
+
+.wx-ranking-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.wx-ranking-item-name {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.wx-ranking-item-count {
+  font-size: 0.74rem;
+  font-weight: 800;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-ranking-item-count.danger {
+  background: var(--app-amber-soft);
+  color: var(--app-amber-text);
+}
+
+.wx-prog-bar {
+  width: 100%;
+  height: 6px;
+  background: #eef2ef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.wx-prog-bar-fill {
+  height: 100%;
+  background: var(--app-emerald);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.is-top-danger .wx-prog-bar-fill {
+  background: var(--app-amber);
+}
+
+/* Feed dinámico */
+.wx-feed-item {
+  background: #ffffff;
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.wx-feed-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.wx-feed-item-point {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--app-emerald);
+}
+
+.wx-feed-item-time {
+  font-size: 0.7rem;
+  color: var(--app-text-muted);
+}
+
+.wx-feed-item-waste {
+  font-size: 0.78rem;
+  color: var(--app-text-body);
+  margin-bottom: 0.2rem;
+}
+
+.wx-feed-item-meta {
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wx-badge-points {
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: #fbf7ee;
+  color: #855b14;
+  border: 1px solid #f1e4c7;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.wx-demo-tag.simulated {
+  background: var(--app-amber-soft) !important;
+  color: var(--app-amber-text) !important;
+  border-color: var(--app-amber-border) !important;
+}
+
+.wx-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.2rem;
+  flex: 1;
+  height: 100%;
+  transition: var(--transition);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.wx-tab-item.active {
+  color: var(--app-emerald);
+}
+
+/* ==========================================================================
+   Iconografía Vectorial Limpia (100% Vector SVG, Cero Emojis)
+   ========================================================================== */
+.topbar-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  stroke: #a3c2b1;
+}
+
+.points-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.35rem;
+}
+
+.points-icon-svg svg {
+  stroke: #ffffff;
+}
+
+.footer-coord {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metric-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-icon-wrap svg {
+  stroke: var(--app-emerald);
+}
+
+.activity-icon-clean {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--app-mint-soft);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.activity-row:hover .activity-icon-clean {
+  background: var(--app-emerald);
+  color: #ffffff;
+}
+
+.activity-row:hover .activity-icon-clean svg {
+  stroke: #ffffff;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.dot-green {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.dot-amber {
+  background: #f59e0b;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+.dot-red {
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+.app-reward-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #fbf7ee;
+  border: 1px solid #f1e4c7;
+  color: #855b14;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.reward-icon-svg {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f5eedc;
+  color: #855b14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reward-icon-svg svg {
+  stroke: #855b14;
+}
+
+.vuln-icon-svg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vuln-icon-svg svg {
+  stroke: #b45309;
+}
+
+.insight-icon-svg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(45, 122, 85, 0.15);
+  color: var(--app-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-icon-svg svg {
+  stroke: var(--app-emerald);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--app-emerald);
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo svg {
+  stroke: var(--app-emerald);
+}
+
+.footer-contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact ul li svg {
+  stroke: var(--app-emerald);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Tarjetas Visuales de Características con Fotografía Real (Estilo Mobile Cards)
+   ========================================================================== */
+.app-feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: var(--app-card);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--app-mint-border);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.feature-card-img {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  background: var(--app-emerald-dark);
+}
+
+.feature-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-card-img img {
+  transform: scale(1.08);
+}
+
+.card-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(18, 56, 38, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.feature-card-body h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.feature-card-body p {
+  font-size: 0.76rem;
+  color: var(--app-text-body);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Gráfico de Barras de Tendencia de Lluvia (Estilo Spending Trend Fintech)
+   ========================================================================== */
+.app-trend-card {
+  margin-bottom: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chart-header h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.chart-sub {
+  font-size: 0.8rem;
+  color: var(--app-text-muted);
+}
+
+.legend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--app-emerald);
+  background: var(--app-mint-soft);
+  border: 1px solid var(--app-mint-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.trend-bars-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.85rem;
+  align-items: flex-end;
+  height: 190px;
+  padding: 0.75rem 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--app-border-subtle);
+}
+
+.trend-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.bar-visual-wrap {
+  width: 100%;
+  max-width: 44px;
+  height: 120px;
+  background: #eef3ef;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--app-mint);
+  border-radius: var(--radius-sm);
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trend-bar-item.active-rain .bar-fill {
+  background: var(--app-emerald);
+  box-shadow: 0 0 12px var(--app-emerald-glow);
+}
+
+.trend-bar-item:hover .bar-fill {
+  filter: brightness(1.15);
+}
+
+.bar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--app-text-muted);
+}
+
+.bar-val {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--app-text-main);
+}
+
+.trend-bar-item.active-rain .bar-val {
+  color: var(--app-emerald);
+}
+
+/* Responsividad para móviles (<= 640px) */
+@media (max-width: 640px) {
+  .app-feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .feature-card-img {
+    height: 110px;
+  }
+
+  .feature-card-body {
+    padding: 0.75rem;
+  }
+
+  .feature-card-body h4 {
+    font-size: 0.82rem;
+  }
+
+  .feature-card-body p {
+    font-size: 0.7rem;
+  }
+
+  .trend-bars-container {
+    gap: 0.35rem;
+    height: 160px;
+  }
+
+  .bar-visual-wrap {
+    max-width: 32px;
+    height: 95px;
+  }
+
+  .bar-label {
+    font-size: 0.62rem;
+  }
+
+  .bar-val {
+    font-size: 0.64rem;
+  }
+}
+
+/* ==========================================================================
+   14. ADAPTACIÓN PARA TABLETS Y PANTALLAS MEDIANAS (<= 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .app-feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .app-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .app-grid-two-cols {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   15. ADAPTACIÓN ULTRA-COMPACTA PARA CELULARES PEQUEÑOS (<= 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .app-quick-actions-grid {
+    gap: 0.35rem;
+  }
+
+  .quick-action-tile {
+    padding: 0.75rem 0.15rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .action-icon-circle {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.25rem;
+  }
+
+  .action-title {
+    font-size: 0.68rem;
+  }
+
+  .action-sub {
+    display: none;
+  }
+
+  .app-feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-weather-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-bars-container {
+    gap: 0.2rem;
+  }
+
+  .bar-visual-wrap {
+    max-width: 26px;
+  }
+
+  .emerald-metric-value {
+    font-size: 1.65rem;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="./styles.css">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.update();
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Cintillo Institucional Superior (Visible en PC Desktop)
+       ======================================================================== -->
+  <div class="app-topbar desktop-only">
+    <div class="app-container app-topbar-inner">
+      <div class="app-topbar-left">
+        <svg class="topbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <path d="M3 21h18"></path>
+          <path d="M5 21V7l7-4 7 4v14"></path>
+          <path d="M9 10h6"></path>
+          <path d="M9 14h6"></path>
+          <path d="M9 18h6"></path>
+        </svg>
+        <span>Alcaldía de Quibdó &bull; Codechocó &bull; Cuenca del Río Atrato &bull; Sector La Margarita</span>
+      </div>
+      <div class="app-topbar-right">
+        <svg class="topbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>Línea comunitaria: <strong>(604) 671-2000</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Encabezado Principal Estilo App Nativa
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="app-container app-header-inner">
+      <!-- Saludo / Perfil Comunitario -->
+      <div class="app-user-profile">
+        <div class="app-avatar" aria-label="Logo EcoPay Quibdó">
+          <!-- Logo Vectorial Limpio: Gota de Agua & Hoja Ecológica -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="app-user-info">
+          <span class="app-greeting">Hola, vecino</span>
+          <h2 class="app-location">Sector La Margarita</h2>
+        </div>
+      </div>
+
+      <!-- Menú Desktop Horizontal -->
+      <nav class="app-nav-desktop desktop-only" aria-label="Navegación principal">
+        <a href="#inicio" class="app-nav-link active">Inicio</a>
+        <a href="#panel-simulacion" class="app-nav-link">Simular Alerta</a>
+        <a href="#seccion-clima" class="app-nav-link">¿Va a llover?</a>
+        <a href="#puntos-criticos" class="app-nav-link">Puntos vigilados</a>
+        <a href="#seccion-reporte" class="app-nav-link">Hacer reporte</a>
+        <a href="#seccion-ranking" class="app-nav-link">Ranking</a>
+      </nav>
+
+      <!-- Botones de Acción de Cabecera -->
+      <div class="app-header-actions">
+        <!-- Chip de Conexión -->
+        <span id="network-status-badge" class="app-chip-network" title="Conexión en tiempo real">
+          <span class="status-dot"></span>
+          <span class="desktop-only status-text">En línea</span>
+        </span>
+
+        <!-- Botón Conmutador de Sonido de Alarma -->
+        <button id="btn-toggle-alarm" class="app-circle-btn" type="button" title="Probar o silenciar sirena">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span id="audio-status-text" class="sr-only">Sonido activo</span>
+        </button>
+
+        <!-- Botón Instalar App en Celular -->
+        <button id="btn-pwa-install" class="app-btn-install" type="button" title="Instalar en el celular">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span class="desktop-only">Instalar App</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Cuerpo Principal de la Aplicación
+       ======================================================================== -->
+  <main class="app-main-content">
+    <div class="app-container">
+
+      <!-- ====================================================================
+           1. TARJETA HERO VERDE ESMERALDA (Fintech Style)
+           ==================================================================== -->
+      <section id="inicio" class="app-hero-section">
+        <div class="app-emerald-card">
+          <!-- Cabecera de la Tarjeta -->
+          <div class="emerald-card-header">
+            <div class="emerald-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span class="badge-text">Alerta Temprana Comunitaria</span>
+            </div>
+            <div class="emerald-satellite-status">
+              <span class="sat-dot"></span>
+              <span>Monitoreo 24/7 en Quibdó</span>
+            </div>
+          </div>
+
+          <!-- Métrica Central de Impacto -->
+          <div class="emerald-metric-group">
+            <span class="emerald-metric-label">Tus EcoPuntos comunitarios</span>
+            <div class="emerald-metric-value" id="user-ecopoints-badge">
+              <!-- Icono vectorial limpio de insignia Eco -->
+              <span class="points-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v12"></path>
+                  <path d="M16 10l-4-4-4 4"></path>
+                </svg>
+              </span>
+              <span class="points-text">140 EcoPuntos</span>
+            </div>
+            <div class="emerald-badge-sub">
+              <span>Puntos ganados por ayudar a mantener limpias las rejillas de La Margarita</span>
+            </div>
+          </div>
+
+          <!-- Indicador Dinámico de Flujo y Resguardo -->
+          <div class="emerald-status-banner">
+            <div class="status-banner-left">
+              <span class="status-pulse-dot"></span>
+              <span class="status-headline" id="hero-quick-status">Buen tiempo en Quibdó &bull; Caños despejados</span>
+            </div>
+            <span class="status-banner-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Aviso con 40–60 min de anticipación</span>
+            </span>
+          </div>
+
+          <!-- Coordenadas Oficiales de Quibdó -->
+          <div class="emerald-card-footer">
+            <span class="footer-coord">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Quibdó: 5.6919° N, -76.6583° O</span>
+            </span>
+            <span>10 caños y quebradas bajo cuidado</span>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             2. CUATRO BOTONES DE ACCIÓN RÁPIDA (Grid Horizontal Limpio)
+             ================================================================== -->
+        <div class="app-quick-actions-grid">
+          <!-- Acción 1: Reportar -->
+          <a href="#seccion-reporte" class="quick-action-tile action-report" title="Reportar basura en rejilla">
+            <div class="action-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </div>
+            <span class="action-title">Reportar</span>
+            <span class="action-sub">+10 EcoPuntos</span>
+          </a>
+
+          <!-- Acción 2: Simular Alerta -->
+          <a href="#panel-simulacion" class="quick-action-tile action-alert" title="Probar simulador de lluvia">
+            <div class="action-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <span class="action-title">Simular</span>
+            <span class="action-sub">Prueba en vivo</span>
+          </a>
+
+          <!-- Acción 3: Clima -->
+          <a href="#seccion-clima" class="quick-action-tile action-weather" title="¿Va a llover hoy?">
+            <div class="action-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                <line x1="8" y1="19" x2="8" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <line x1="16" y1="19" x2="16" y2="21"></line>
+              </svg>
+            </div>
+            <span class="action-title">¿Va a llover?</span>
+            <span class="action-sub">En tiempo real</span>
+          </a>
+
+          <!-- Acción 4: Puntos Vigilados -->
+          <a href="#puntos-criticos" class="quick-action-tile action-points" title="Ver caños vigilados">
+            <div class="action-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <span class="action-title">Puntos</span>
+            <span class="action-sub">10 Caños</span>
+          </a>
+        </div>
+        <!-- Cuatro Tarjetas Visuales con Fotografía Real (Estilo Wastex / Mobile Cards) -->
+        <div class="app-feature-cards-grid">
+          <!-- Tarjeta 1 -->
+          <div class="feature-card">
+            <div class="feature-card-img">
+              <img src="./assets/card1.jpg" alt="Resguardo de basuras bajo techo" loading="lazy">
+              <span class="card-pill">40–60 min antes</span>
+            </div>
+            <div class="feature-card-body">
+              <h4>Resguardo Preventivo</h4>
+              <p>Bolsas bajo techo antes del aguacero para que la corriente no las arrastre a los caños.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="feature-card">
+            <div class="feature-card-img">
+              <img src="./assets/card2.jpg" alt="Despeje de rejillas" loading="lazy">
+              <span class="card-pill">Acción Vecinal</span>
+            </div>
+            <div class="feature-card-body">
+              <h4>Despeje de Rejillas</h4>
+              <p>Cunetas libres de botellas y plásticos para permitir la entrada del agua sin desbordes.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="feature-card">
+            <div class="feature-card-img">
+              <img src="./assets/truck.jpg" alt="Cuencas del Río Atrato" loading="lazy">
+              <span class="card-pill">10 Sectores</span>
+            </div>
+            <div class="feature-card-body">
+              <h4>10 Puntos Vigilados</h4>
+              <p>Vigilancia comunitaria en caños tributarios del Río Atrato en el sector La Margarita.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="feature-card">
+            <div class="feature-card-img">
+              <img src="./assets/card4.jpg" alt="Incentivos comunitarios" loading="lazy">
+              <span class="card-pill">Mérito Cívico</span>
+            </div>
+            <div class="feature-card-body">
+              <h4>Incentivos EcoPuntos</h4>
+              <p>Reconocimiento comunitario avalado por la JAC para los vecinos vigías ambientales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           3. SIMULADOR DE ALERTAS Y BOLETÍN EN VIVO
+           ==================================================================== -->
+      <section id="panel-simulacion" class="app-section">
+        <div class="app-card app-simulation-card">
+          <div class="simulation-header">
+            <div class="simulation-title-wrap">
+              <span class="app-tag-pill">Simulador de Alertas</span>
+              <h3>Prueba cómo avisa el sistema antes de llover</h3>
+              <p>Presiona los botones para escuchar la alarma y ver el aviso que le llega a los vecinos de La Margarita antes del aguacero.</p>
+            </div>
+            <div class="simulation-current-mode">
+              <span id="current-mode-tag" class="mode-badge">Satélite en tiempo real</span>
+            </div>
+          </div>
+
+          <!-- Botones de Control Segmentado -->
+          <div class="simulation-controls-dock">
+            <button id="btn-sim-soft" class="sim-btn sim-btn-amber" type="button">
+              <span class="sim-dot"></span>
+              <span class="sim-name">Alerta Amarilla</span>
+              <small>Viene lluvia &bull; 40 a 60 min</small>
+            </button>
+
+            <button id="btn-sim-hard" class="sim-btn sim-btn-red" type="button">
+              <span class="sim-dot"></span>
+              <span class="sim-name">Alerta Roja</span>
+              <small>Aguacero fuerte &bull; Sirena</small>
+            </button>
+
+            <button id="btn-sim-reset" class="sim-btn sim-btn-reset active" type="button">
+              <span class="sim-dot"></span>
+              <span class="sim-name">Volver a datos reales</span>
+              <small>Clima actual en Quibdó</small>
+            </button>
+          </div>
+
+          <!-- Boletín Dinámico HUD -->
+          <div id="alert-banner" class="app-hud-banner hud-normal" aria-live="assertive">
+            <div class="hud-inner">
+              <div class="hud-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="hud-text-wrap">
+                <div class="hud-meta">
+                  <span class="hud-status-badge">Todo en orden</span>
+                  <span class="hud-time">Actualizado hace un momento</span>
+                </div>
+                <h4 class="hud-title">Rejillas y caños fluyendo con normalidad</h4>
+                <p class="hud-desc">Por ahora no hay nubes de aguacero sobre Quibdó. Es un buen momento para verificar que las cunetas frente a casa estén libres de botellas plásticas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. MONITOREO DEL CLIMA EN QUIBDÓ (#seccion-clima)
+           ==================================================================== -->
+      <section id="seccion-clima" class="app-section">
+        <div class="section-heading-row">
+          <div>
+            <span class="app-tag-pill">Clima en Quibdó</span>
+            <h3 class="section-title">¿Cómo está el tiempo hoy?</h3>
+            <p class="section-desc">Monitoreo minuto a minuto sobre la cuenca del Río Atrato y La Margarita.</p>
+          </div>
+          <button id="btn-refresh-weather" class="app-btn-outline" type="button" title="Actualizar datos del clima">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            <span class="desktop-only">Actualizar</span>
+          </button>
+        </div>
+
+        <!-- Tarjeta de Consejo Comunitario (Leaf Banner con SVG de Hoja Limpio) -->
+        <div class="app-leaf-insight-card">
+          <div class="insight-icon-svg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            </svg>
+          </div>
+          <div class="insight-text">
+            <strong>¡Cuidemos nuestro barrio, vecinos!</strong>
+            <span>Si ves que el cielo se empieza a oscurecer, entra las bolsas de basura y revisa que la rejilla de tu cuadra no tenga plástico tapando la entrada de agua.</span>
+          </div>
+        </div>
+
+        <!-- Gráfico de Tendencia de Lluvia en las Próximas 6 Horas (Estilo Spending Trend de la Referencia) -->
+        <div class="app-card app-trend-card">
+          <div class="chart-header">
+            <div>
+              <span class="app-tag-pill">Tendencia de Lluvia</span>
+              <h4>Pronóstico satelital para las próximas 6 horas</h4>
+              <p class="chart-sub">Estimación de intensidad de precipitación sobre el sector La Margarita.</p>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-badge"><span class="legend-dot"></span> Quibdó en vivo</span>
+            </div>
+          </div>
+
+          <div class="trend-bars-container">
+            <div class="trend-bar-item">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 10%;"></div>
+              </div>
+              <span class="bar-label">Ahora</span>
+              <span class="bar-val">0.0 mm</span>
+            </div>
+
+            <div class="trend-bar-item">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 25%;"></div>
+              </div>
+              <span class="bar-label">+1 hora</span>
+              <span class="bar-val">0.3 mm</span>
+            </div>
+
+            <div class="trend-bar-item active-rain">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 65%;"></div>
+              </div>
+              <span class="bar-label">+2 horas</span>
+              <span class="bar-val">2.5 mm</span>
+            </div>
+
+            <div class="trend-bar-item active-rain">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 85%;"></div>
+              </div>
+              <span class="bar-label">+3 horas</span>
+              <span class="bar-val">4.8 mm</span>
+            </div>
+
+            <div class="trend-bar-item">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 35%;"></div>
+              </div>
+              <span class="bar-label">+4 horas</span>
+              <span class="bar-val">1.2 mm</span>
+            </div>
+
+            <div class="trend-bar-item">
+              <div class="bar-visual-wrap">
+                <div class="bar-fill" style="height: 12%;"></div>
+              </div>
+              <span class="bar-label">+5 horas</span>
+              <span class="bar-val">0.1 mm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid de 6 Tarjetas de Clima con Iconos Vectoriales Puros -->
+        <div class="app-weather-grid">
+          <!-- Tarjeta 1: Lluvia ahora -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">¿Está lloviendo ahora?</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                  <line x1="8" y1="19" x2="8" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                  <line x1="16" y1="19" x2="16" y2="21"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value" id="val-precip-current">0.0 mm/h</div>
+            <div class="metric-footer-note">Cielo despejado en La Margarita</div>
+          </div>
+
+          <!-- Tarjeta 2: Lluvia próxima hora -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Lluvia en la próxima hora</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value" id="val-rain-1h">0.0 mm</div>
+            <div class="metric-footer-note">Tiempo suficiente para resguardar basura</div>
+          </div>
+
+          <!-- Tarjeta 3: Probabilidad -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Probabilidad de lluvia</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value" id="val-rain-prob">15%</div>
+            <div class="metric-footer-note">Alerta preventiva al superar el 65%</div>
+          </div>
+
+          <!-- Tarjeta 4: Temperatura -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Temperatura en Quibdó</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value" id="val-temperature">27.0 °C</div>
+            <div class="metric-footer-note" id="val-app-temp">Sensación térmica: 31.0 °C</div>
+          </div>
+
+          <!-- Tarjeta 5: Humedad -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Humedad en el aire</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value" id="val-humidity">86%</div>
+            <div class="metric-footer-note">Clima típico de nuestro Chocó</div>
+          </div>
+
+          <!-- Tarjeta 6: Río Atrato -->
+          <div class="weather-metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Cuenca del Río Atrato</span>
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M2 12c3-3 6-3 9 0s6 3 9 0"></path>
+                  <path d="M2 17c3-3 6-3 9 0s6 3 9 0"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-main-value">Nivel Estable</div>
+            <div class="metric-footer-note">Caños tributarios bajando con fluidez</div>
+          </div>
+        </div>
+
+        <div class="weather-sync-status">
+          <small id="weather-last-sync">Sincronizado con datos satelitales en vivo</small>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           5. PUNTOS VIGILADOS (#puntos-criticos)
+           Iconografía Vectorial Pura Estilo Transacciones Fintech
+           ==================================================================== -->
+      <section id="puntos-criticos" class="app-section">
+        <div class="section-heading-row">
+          <div>
+            <span class="app-tag-pill">Cuidado de Caños</span>
+            <h3 class="section-title">Caños y quebradas vigilados</h3>
+            <p class="section-desc">Puntos donde evitamos taponamientos cuando llueve fuerte.</p>
+          </div>
+          <span class="app-badge-outline">10 Puntos Activos</span>
+        </div>
+
+        <div class="app-card app-activity-card">
+          <div class="activity-list">
+            <!-- Punto 1 -->
+            <div class="activity-row">
+              <div class="activity-icon-clean">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+              <div class="activity-info">
+                <h4>Quebrada La Cascarita</h4>
+                <p>Paso peatonal del Sector La Margarita</p>
+              </div>
+              <div class="activity-badge badge-normal">
+                <span class="badge-dot dot-green"></span>
+                <span>Fluyendo bien</span>
+              </div>
+            </div>
+
+            <!-- Punto 2 -->
+            <div class="activity-row">
+              <div class="activity-icon-clean">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <path d="M2 12c3-3 6-3 9 0s6 3 9 0"></path>
+                  <path d="M2 17c3-3 6-3 9 0s6 3 9 0"></path>
+                </svg>
+              </div>
+              <div class="activity-info">
+                <h4>Caño Yesca</h4>
+                <p>Puente de la Calle 24</p>
+              </div>
+              <div class="activity-badge badge-normal">
+                <span class="badge-dot dot-green"></span>
+                <span>Sin basuras</span>
+              </div>
+            </div>
+
+            <!-- Punto 3 -->
+            <div class="activity-row">
+              <div class="activity-icon-clean">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></line>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+              </div>
+              <div class="activity-info">
+                <h4>Canal Barrio Kennedy</h4>
+                <p>Sector Bajo &bull; Desagüe de aguas lluvias</p>
+              </div>
+              <div class="activity-badge badge-normal">
+                <span class="badge-dot dot-green"></span>
+                <span>Despejado</span>
+              </div>
+            </div>
+
+            <!-- Punto 4 -->
+            <div class="activity-row">
+              <div class="activity-icon-clean">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <path d="M3 20h18L14 4l-4 7-3-3z"></path>
+                </svg>
+              </div>
+              <div class="activity-info">
+                <h4>Quebrada El Caraño</h4>
+                <p>Salida al Río Atrato &bull; Cerca al aeropuerto</p>
+              </div>
+              <div class="activity-badge badge-normal">
+                <span class="badge-dot dot-green"></span>
+                <span>En observación</span>
+              </div>
+            </div>
+
+            <!-- Punto 5 -->
+            <div class="activity-row">
+              <div class="activity-icon-clean">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="activity-info">
+                <h4>Rejilla Carrera 1ra</h4>
+                <p>Malecón de Quibdó</p>
+              </div>
+              <div class="activity-badge badge-normal">
+                <span class="badge-dot dot-green"></span>
+                <span>Limpia hoy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. FORMULARIO DE REPORTE Y SECTOR MÁS VULNERABLE
+           ==================================================================== -->
+      <section id="seccion-reporte" class="app-section">
+        <div class="app-grid-two-cols">
+          <!-- Columna Izquierda: Formulario -->
+          <div class="app-card">
+            <div class="card-inner-header">
+              <span class="app-tag-pill">Reporte Vecinal</span>
+              <h3>¿Viste una rejilla o caño tapado?</h3>
+              <p>Envía tu reporte para que los vecinos o la cuadrilla de aseo puedan despejarlo antes de que empiece a llover.</p>
+            </div>
+
+            <form id="form-citizen-report" class="app-form">
+              <div class="form-group">
+                <label for="rep-point-select">¿En qué lugar de Quibdó está?</label>
+                <select id="rep-point-select" class="form-control" required>
+                  <option value="">Selecciona el lugar...</option>
+                  <option value="cascarita_margarita">Quebrada La Cascarita (Sector La Margarita)</option>
+                  <option value="yesca_puente_24">Caño Yesca (Puente Calle 24)</option>
+                  <option value="canal_kennedy">Canal Barrio Kennedy</option>
+                  <option value="carano_aeropuerto">Quebrada El Caraño (Sector Aeropuerto)</option>
+                  <option value="rejilla_malecon">Rejilla Carrera 1ra (Malecón)</option>
+                  <option value="yesquita_sector">Sector La Yesquita</option>
+                  <option value="huapango_drenaje">Drenaje Barrio Huapango</option>
+                  <option value="otro_sector">Otro sector de Quibdó</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="rep-waste-select">¿Qué tipo de basura está acumulada?</label>
+                <select id="rep-waste-select" class="form-control" required>
+                  <option value="Botellas y Plásticos flotantes">Botellas y envases plásticos</option>
+                  <option value="Bolsas de basura arrastradas">Bolsas de basura domiciliaria</option>
+                  <option value="Sedimento y Lodo">Barro, tierra y hojas secas</option>
+                  <option value="Madera y Palizadas">Madera, troncos y palizadas</option>
+                  <option value="Escombros y Residuos mixtos">Escombros de obra o residuos varios</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="rep-description">Dirección o punto de referencia</label>
+                <input type="text" id="rep-description" class="form-control" placeholder="Ej: Diagonal a la panadería, frente a la rejilla principal..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="rep-photo-input">Foto del lugar (opcional)</label>
+                <input type="file" id="rep-photo-input" class="form-control-file" accept="image/*">
+                <div id="photo-preview-wrap" class="photo-preview-wrap" style="display: none;">
+                  <img id="img-report-preview" src="#" alt="Foto del reporte">
+                </div>
+              </div>
+
+              <!-- Recompensa Simbólica Limpia -->
+              <div class="app-reward-pill">
+                <div class="reward-icon-svg">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 8 12 12 14 14"></polyline>
+                  </svg>
+                </div>
+                <span><strong>¡Ganas +10 EcoPuntos!</strong> Por cada reporte que ayude a prevenir que se tape un caño en el barrio.</span>
+              </div>
+
+              <button type="submit" class="app-btn-emerald">
+                <span>Enviar reporte ahora</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Columna Derecha: Ranking y Reportes Recientes -->
+          <div class="app-card" id="seccion-ranking">
+            <div class="card-inner-header">
+              <span class="app-tag-pill">Atención Prioritaria</span>
+              <h3>Sector donde más se acumula basura</h3>
+              <p>Se actualiza automáticamente según los reportes enviados por la comunidad de La Margarita.</p>
+            </div>
+
+            <!-- Banner Destacado -->
+            <div class="app-vulnerability-banner">
+              <div class="vuln-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <div class="vuln-text">
+                <h4 id="top-vulnerable-name">Quebrada La Cascarita &bull; Cruce La Margarita</h4>
+                <p id="top-vulnerable-stats">4 reportes esta semana &bull; Requiere limpieza prioritaria</p>
+              </div>
+            </div>
+
+            <!-- Lista de Ranking -->
+            <div class="ranking-block">
+              <h5 class="sub-label">Lugares con más reportes de taponamiento</h5>
+              <div id="ranking-list-container" class="ranking-items-list">
+                <!-- Llenado dinámico -->
+              </div>
+            </div>
+
+            <!-- Reportes Recientes -->
+            <div class="feed-block">
+              <h5 class="sub-label">Últimos reportes de los vecinos</h5>
+              <div id="reports-feed-container" class="reports-feed-list">
+                <!-- Llenado dinámico -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. PIE DE PÁGINA
+           ==================================================================== -->
+      <footer class="app-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+              <span class="footer-title">EcoPay Quibdó</span>
+            </div>
+            <p>Iniciativa comunitaria para cuidar los caños de La Margarita y protegernos juntos de las crecientes del Río Atrato.</p>
+          </div>
+
+          <div class="footer-contact">
+            <h5>Números de emergencia en Quibdó</h5>
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Atención Comunitaria: (604) 671-2000</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span>Bomberos Quibdó: 119</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Defensa Civil: 144</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="16"></line>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                <span>Cruz Roja Quibdó: 132</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 EcoPay Quibdó &bull; Sector La Margarita, Quibdó, Chocó.</p>
+          <p>Funciona sin necesidad de internet &bull; Monitoreo meteorológico abierto</p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       BARRA DE NAVEGACIÓN INFERIOR CON BOTÓN FAB CENTRAL ELEVADO
+       ======================================================================== -->
+  <nav class="app-bottom-nav" aria-label="Navegación principal">
+    <!-- Tab 1: Inicio -->
+    <a href="#inicio" class="app-tab-item active" data-target="inicio">
+      <span class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </span>
+      <span>Inicio</span>
+    </a>
+
+    <!-- Tab 2: Clima -->
+    <a href="#seccion-clima" class="app-tab-item" data-target="seccion-clima">
+      <span class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+          <line x1="8" y1="19" x2="8" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+          <line x1="16" y1="19" x2="16" y2="21"></line>
+        </svg>
+      </span>
+      <span>Clima</span>
+    </a>
+
+    <!-- Center Floating Action Button (FAB): Reportar -->
+    <a href="#seccion-reporte" class="app-tab-fab" title="Reportar rejilla tapada">
+      <div class="fab-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </div>
+      <span class="sr-only">Hacer reporte</span>
+    </a>
+
+    <!-- Tab 3: Alertas -->
+    <a href="#panel-simulacion" class="app-tab-item" data-target="panel-simulacion">
+      <span class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+      </span>
+      <span>Alertas</span>
+    </a>
+
+    <!-- Tab 4: Ranking -->
+    <a href="#seccion-ranking" class="app-tab-item" data-target="seccion-ranking">
+      <span class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+      </span>
+      <span>Ranking</span>
+    </a>
+  </nav>
+
+  <!-- Notificación Toast -->
+  <div id="app-toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Lógica de la Aplicación -->
+  <script src="./app.js?v=9.0.0"></script>
+</body>
+</html>
